@@ -1,0 +1,6 @@
+reload_site
+===========
+
+Simple module for reloading a coscms website. Used with demo.coscms.org in order to reload the site every 60
+minute. All there is of interest is one cron function found in the cron.inc file. This is also a prototype module for
+building cron jobs for your a coscms site. 
