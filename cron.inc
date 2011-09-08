@@ -2,7 +2,7 @@
 
 
 function reload_site_cron (){
-    $latest = _get_latest();
+    $latest = get_latest_db_dump();
     if (!$latest){
         cos_cli_abort("Cron failed in module reload_site: No sql file found in backup/sql");
         return 1;
