@@ -16,7 +16,7 @@ function reload_site_cron (){
     $options['silence'] = 1;
 
     $command =
-        "mysql -u" . register::$vars['coscms_main']['username'] .
-        " -p" . register::$vars['coscms_main']['password'] . " $db[name] < $file";
+        "mysql -u" . config::$vars['coscms_main']['username'] .
+        " -p" . config::$vars['coscms_main']['password'] . " $db[name] < $file";
     return $ret = cos_exec($command, $options);
 }
