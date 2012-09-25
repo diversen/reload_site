@@ -2,6 +2,7 @@
 
 
 function reload_site_cron (){
+    /*
     $latest = get_latest_db_dump();
     if (!$latest){
         cos_cli_abort("Cron failed in module reload_site: No sql file found in backup/sql");
@@ -18,5 +19,14 @@ function reload_site_cron (){
     $command =
         "mysql -u" . config::$vars['coscms_main']['username'] .
         " -p" . config::$vars['coscms_main']['password'] . " $db[name] < $file";
-    return $ret = cos_exec($command, $options);
+     * 
+     */
+    $options = array();
+    $options['silence'] = 1;
+    $command ="./coscli.sh db --load-db-file";
+    cos_exec($command, $options);
+    
+    $command ="./coscli.sh backup --files-restore";
+    cos_exec($command, $options);
+    
 }
