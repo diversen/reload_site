@@ -10,7 +10,7 @@ function reload_site ($options) {
 }
     
 mainCli::setCommand('reload', array(
-    'description' => "Reload site with latest files and sql backup ",
+    'description' => "Wrapper command used for reloading site with latest public files and sql backup ",
 ));
 
 mainCli::setOption('reload_site', array(
