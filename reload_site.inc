@@ -1,7 +1,8 @@
 <?php
 
+use diversen\cli\common;
 function reload_site ($options) {
-    cos_needs_root();
+    common::needRoot();
     $command ="./coscli.sh db --load-db-file";
     cos_exec($command, $options);
     
