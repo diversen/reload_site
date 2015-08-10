@@ -4,10 +4,10 @@ use diversen\cli\common;
 function reload_site ($options) {
     common::needRoot();
     $command ="./coscli.sh db --load-db-file";
-    cos_exec($command, $options);
+    common::execCommand($command, $options);
     
     $command ="./coscli.sh backup --public-restore";
-    cos_exec($command, $options);
+    common::execCommand($command, $options);
 }
     
 mainCli::setCommand('reload', array(
