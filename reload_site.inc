@@ -10,11 +10,11 @@ function reload_site ($options) {
     common::execCommand($command, $options);
 }
     
-mainCli::setCommand('reload', array(
+self::setCommand('reload', array(
     'description' => "Wrapper command used for reloading site with latest public files and sql backup ",
 ));
 
-mainCli::setOption('reload_site', array(
+self::setOption('reload_site', array(
     'long_name'   => '--reload',
     'description' => 'Command for reloading site files',
     'action'      => 'StoreTrue'
